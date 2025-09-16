@@ -1,27 +1,44 @@
-async function getAIResponse(userMsg) {
-    const apiKey = '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'; // Replace with your actual key
-    const endpoint = 'https://api.openai.com/v1/chat/completions';
-    const data = {
-        model: "gpt-3.5-turbo",
-        messages: [{role: "user", content: userMsg}]
-    };
-    const response = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${apiKey}`
-        },
-        body: JSON.stringify(data)
-    });
-    const result = await response.json();
-    return result.choices[0].message.content;
-}
 
-// Usage in sendMessage()
-async function sendMessage() {
-    // ...add user message to chat...
-    const userMsg = chatInput.value.trim();
-    // ...existing code...
-    const botReply = await getAIResponse(userMsg);
-    // ...add botReply to chat...
-}
+        import products from "./data.js";
+
+        const chatbox = document.getElementById("chatbox");
+        const userInput = document.getElementById("userInput");
+
+        function addMessage(sender, text) {
+          const msg = document.createElement("div");
+          msg.className = sender;
+          msg.textContent = `${sender}: ${text}`;
+          chatbox.appendChild(msg);
+          chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        function sendMessage() {
+          const text = userInput.value.trim();
+          if (!text) return;
+          addMessage("user", text);
+          userInput.value = "";
+
+          // process user input
+          handleBotReply(text);
+        }
+
+        function handleBotReply(message) {
+          message = message.toLowerCase();
+
+          let found = false;
+          for (const [product, details] of Object.entries(products)) {
+            if (message.includes(product.toLowerCase())) {
+              let reply = `${product} available sizes: ${details.sizes.join(", ")}.\nPrices:\n`;
+              for (const [size, price] of Object.entries(details.prices)) {
+                reply += `- ${size}: ${price}\n`;
+              }
+              addMessage("bot", reply.trim());
+              found = true;
+              break;
+            }
+          }
+
+          if (!found) {
+            addMessage("bot", "Sorry, I don’t have that information.");
+          }
+        }
