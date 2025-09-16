@@ -265,7 +265,7 @@ const companiesData = [
     }
 ];
 
-// Price list data from the image
+// Price list data
 const priceListData = [
     { category: "Photo paper - Sticker", item: "A4 - size", price: "LKR 250.00" },
     { category: "Bookmarks", item: "silky [3.4 cm × 15.2 cm]", price: "LKR 200.00" },
@@ -303,7 +303,7 @@ let currentFilters = {
 let filtersVisible = false;
 
 // Initialize the page
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     loadServices();
     loadProducts();
     loadTestimonials();
@@ -319,12 +319,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function loadServices() {
     const servicesContainer = document.getElementById('services-container');
     const moreServicesContainer = document.getElementById('more-services');
-    
+
     if (!servicesContainer || !moreServicesContainer) return;
-    
+
     servicesContainer.innerHTML = '';
     moreServicesContainer.innerHTML = '';
-    
+
     servicesData.forEach((service, index) => {
         const serviceCard = document.createElement('div');
         serviceCard.className = 'service-card';
@@ -336,7 +336,7 @@ function loadServices() {
                 <p>${service.description}</p>
             </div>
         `;
-        
+
         if (index < 4) {
             servicesContainer.appendChild(serviceCard);
         } else {
@@ -349,14 +349,14 @@ function loadServices() {
 function loadProducts(filteredProducts = null) {
     const productsContainer = document.getElementById('products-container');
     const moreProductsContainer = document.getElementById('more-products');
-    
+
     if (!productsContainer || !moreProductsContainer) return;
-    
+
     productsContainer.innerHTML = '';
     moreProductsContainer.innerHTML = '';
-    
+
     const products = filteredProducts || productsData;
-    
+
     if (products.length === 0) {
         const noResultsDiv = document.createElement('div');
         noResultsDiv.className = 'no-results';
@@ -370,7 +370,7 @@ function loadProducts(filteredProducts = null) {
         productsContainer.appendChild(noResultsDiv);
         return;
     }
-    
+
     products.forEach((product, index) => {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
@@ -389,14 +389,14 @@ function loadProducts(filteredProducts = null) {
                 <a href="#contact" class="btn">${product.orderNowBtnText}</a>
             </div>
         `;
-        
+
         if (index < 8) {
             productsContainer.appendChild(productCard);
         } else {
             moreProductsContainer.appendChild(productCard);
         }
     });
-    
+
     const showMoreProductsBtn = document.getElementById('show-more-products');
     if (showMoreProductsBtn) {
         if (products.length <= 8) {
@@ -411,9 +411,9 @@ function loadProducts(filteredProducts = null) {
 function loadTestimonials() {
     const testimonialsTrack = document.getElementById('testimonials-track');
     if (!testimonialsTrack) return;
-    
+
     testimonialsTrack.innerHTML = '';
-    
+
     testimonialsData.forEach(testimonial => {
         const testimonialCard = document.createElement('div');
         testimonialCard.className = 'testimonial-card';
@@ -437,9 +437,9 @@ function loadTestimonials() {
 function loadCompanies() {
     const companiesTrack = document.getElementById('companies-track');
     if (!companiesTrack) return;
-    
+
     companiesTrack.innerHTML = '';
-    
+
     companiesData.forEach((company, index) => {
         const companyLogo = document.createElement('div');
         companyLogo.className = 'company-logo';
@@ -455,17 +455,17 @@ function loadCompanies() {
 // Setup product filters
 function setupProductFilters() {
     const filterToggleBtn = document.getElementById('filter-toggle-btn');
-    
+
     if (filterToggleBtn) {
-        filterToggleBtn.addEventListener('click', function(e) {
+        filterToggleBtn.addEventListener('click', function (e) {
             e.preventDefault();
             toggleFilters();
         });
     }
-    
+
     const searchInput = document.getElementById('search-input');
     const searchClear = document.getElementById('search-clear');
-    
+
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             currentFilters.search = e.target.value.toLowerCase();
@@ -477,7 +477,7 @@ function setupProductFilters() {
             applyFilters();
         });
     }
-    
+
     if (searchClear) {
         searchClear.addEventListener('click', () => {
             if (searchInput) {
@@ -489,7 +489,7 @@ function setupProductFilters() {
             }
         });
     }
-    
+
     const categoryFilter = document.getElementById('category-filter');
     if (categoryFilter) {
         categoryFilter.addEventListener('change', (e) => {
@@ -497,7 +497,7 @@ function setupProductFilters() {
             applyFilters();
         });
     }
-    
+
     const finishFilter = document.getElementById('finish-filter');
     if (finishFilter) {
         finishFilter.addEventListener('change', (e) => {
@@ -505,7 +505,7 @@ function setupProductFilters() {
             applyFilters();
         });
     }
-    
+
     const sizeFilter = document.getElementById('size-filter');
     if (sizeFilter) {
         sizeFilter.addEventListener('change', (e) => {
@@ -513,7 +513,7 @@ function setupProductFilters() {
             applyFilters();
         });
     }
-    
+
     const priceFilter = document.getElementById('price-filter');
     if (priceFilter) {
         priceFilter.addEventListener('change', (e) => {
@@ -521,7 +521,7 @@ function setupProductFilters() {
             applyFilters();
         });
     }
-    
+
     const sortFilter = document.getElementById('sort-filter');
     if (sortFilter) {
         sortFilter.addEventListener('change', (e) => {
@@ -529,7 +529,7 @@ function setupProductFilters() {
             applyFilters();
         });
     }
-    
+
     const clearFiltersBtn = document.getElementById('clear-filters');
     if (clearFiltersBtn) {
         clearFiltersBtn.addEventListener('click', clearAllFilters);
@@ -540,11 +540,11 @@ function setupProductFilters() {
 function toggleFilters() {
     const filtersElement = document.getElementById('products-filters');
     const toggleButton = document.getElementById('filter-toggle-btn');
-    
+
     if (!filtersElement || !toggleButton) return;
-    
+
     filtersVisible = !filtersVisible;
-    
+
     if (filtersVisible) {
         filtersElement.classList.add('active');
         toggleButton.classList.add('active');
@@ -561,25 +561,25 @@ function toggleFilters() {
 // Apply filters function
 function applyFilters() {
     let filteredProducts = [...productsData];
-    
+
     if (currentFilters.category !== 'all') {
-        filteredProducts = filteredProducts.filter(product => 
+        filteredProducts = filteredProducts.filter(product =>
             product.category === currentFilters.category
         );
     }
-    
+
     if (currentFilters.finish !== 'all') {
-        filteredProducts = filteredProducts.filter(product => 
+        filteredProducts = filteredProducts.filter(product =>
             product.finish === currentFilters.finish
         );
     }
-    
+
     if (currentFilters.size !== 'all') {
-        filteredProducts = filteredProducts.filter(product => 
+        filteredProducts = filteredProducts.filter(product =>
             product.size === currentFilters.size
         );
     }
-    
+
     if (currentFilters.price !== 'all') {
         filteredProducts = filteredProducts.filter(product => {
             switch (currentFilters.price) {
@@ -594,14 +594,14 @@ function applyFilters() {
             }
         });
     }
-    
+
     if (currentFilters.search) {
         filteredProducts = filteredProducts.filter(product =>
             product.title.toLowerCase().includes(currentFilters.search) ||
             product.description.toLowerCase().includes(currentFilters.search)
         );
     }
-    
+
     switch (currentFilters.sort) {
         case 'price-low':
             filteredProducts.sort((a, b) => a.priceValue - b.priceValue);
@@ -618,7 +618,7 @@ function applyFilters() {
         default:
             break;
     }
-    
+
     loadProducts(filteredProducts);
     updateResultsCounter(filteredProducts.length);
 }
@@ -633,7 +633,7 @@ function clearAllFilters() {
         sort: 'default',
         search: ''
     };
-    
+
     const categoryFilter = document.getElementById('category-filter');
     const finishFilter = document.getElementById('finish-filter');
     const sizeFilter = document.getElementById('size-filter');
@@ -641,7 +641,7 @@ function clearAllFilters() {
     const sortFilter = document.getElementById('sort-filter');
     const searchInput = document.getElementById('search-input');
     const searchClear = document.getElementById('search-clear');
-    
+
     if (categoryFilter) categoryFilter.value = 'all';
     if (finishFilter) finishFilter.value = 'all';
     if (sizeFilter) sizeFilter.value = 'all';
@@ -651,7 +651,7 @@ function clearAllFilters() {
         searchInput.value = '';
         if (searchClear) searchClear.style.display = 'none';
     }
-    
+
     loadProducts();
     updateResultsCounter(productsData.length);
 }
@@ -668,14 +668,14 @@ function updateResultsCounter(count) {
 function startCarousels() {
     const testimonialsTrack = document.getElementById('testimonials-track');
     const companiesTrack = document.getElementById('companies-track');
-    
+
     if (testimonialsTrack) {
         testimonialInterval = setInterval(() => {
             testimonialPosition = (testimonialPosition + 1) % testimonialsData.length;
             testimonialsTrack.style.transform = `translateX(-${testimonialPosition * 100}%)`;
         }, 5000);
     }
-    
+
     if (companiesTrack) {
         companyInterval = setInterval(() => {
             companyPosition = (companyPosition + 1) % (companiesData.length - 3);
@@ -687,7 +687,7 @@ function startCarousels() {
 // Animate elements on scroll
 function animateOnScroll() {
     const animatedElements = document.querySelectorAll('.service-card, .product-card, .company-logo');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -696,7 +696,7 @@ function animateOnScroll() {
             }
         });
     }, { threshold: 0.1 });
-    
+
     animatedElements.forEach(element => {
         observer.observe(element);
     });
@@ -710,19 +710,19 @@ function setupChatbot() {
     const chatMessages = document.getElementById('chat-messages');
     const chatInput = document.getElementById('chat-input');
     const chatSend = document.getElementById('chat-send');
-    
+
     if (chatbotBtn && chatbotModal) {
         chatbotBtn.addEventListener('click', () => {
             chatbotModal.classList.toggle('active');
         });
     }
-    
+
     if (chatClose && chatbotModal) {
         chatClose.addEventListener('click', () => {
             chatbotModal.classList.remove('active');
         });
     }
-    
+
     if (chatSend && chatInput) {
         chatSend.addEventListener('click', sendMessage);
         chatInput.addEventListener('keypress', (e) => {
@@ -731,22 +731,22 @@ function setupChatbot() {
             }
         });
     }
-    
+
     function sendMessage() {
         const message = chatInput.value.trim();
         if (message && chatMessages) {
             addMessage(message, 'user');
             chatInput.value = '';
-            
+
             addTypingIndicator();
-            
+
             setTimeout(() => {
                 removeTypingIndicator();
                 botResponse(message);
             }, 1000 + Math.random() * 1000);
         }
     }
-    
+
     function addMessage(text, sender) {
         if (!chatMessages) return;
         const messageDiv = document.createElement('div');
@@ -755,7 +755,7 @@ function setupChatbot() {
         chatMessages.appendChild(messageDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
-    
+
     function addTypingIndicator() {
         if (!chatMessages) return;
         const typingDiv = document.createElement('div');
@@ -765,50 +765,90 @@ function setupChatbot() {
         chatMessages.appendChild(typingDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
-    
+
     function removeTypingIndicator() {
         const typing = document.getElementById('typing-indicator');
         if (typing) {
             typing.remove();
         }
     }
-    
+
     function botResponse(userMessage) {
         let response = "I'm sorry, I didn't understand that. How can I help you with our printing services?";
-        
         const lowerMsg = userMessage.toLowerCase();
-        
+
+        // Helper: find multiple products
+        function findProducts(keyword) {
+            return productsData.filter(p =>
+                p.title.toLowerCase().includes(keyword) ||
+                p.category.toLowerCase().includes(keyword)
+            );
+        }
+
+        // Price / Cost related queries
         if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('how much')) {
-            if (lowerMsg.includes('photo') || lowerMsg.includes('card')) {
-                response = "Our photocards range from LKR 80 to LKR 300 depending on size and finish. Would you like specific pricing for a particular product?";
+            let matches = [];
+
+            if (lowerMsg.includes('photo') && lowerMsg.includes('card')) {
+                matches = findProducts("photocard");
             } else if (lowerMsg.includes('calendar')) {
-                response = "Our 12-card mini calendars are LKR 1000 (high gloss) to LKR 1200 (silky finish). Perfect for personalized gifts!";
+                matches = findProducts("calendar");
             } else if (lowerMsg.includes('lomo')) {
-                response = "Mini Lomo cards are LKR 25-30 each, or get our 20-card pack for LKR 500-550. Great value for bulk orders!";
-            } else {
-                const randomProduct = priceListData[Math.floor(Math.random() * priceListData.length)];
-                response = `Our ${randomProduct.item} ${randomProduct.category} costs ${randomProduct.price}. Check our products section for the full price list!`;
+                matches = findProducts("lomo");
+            } else if (lowerMsg.includes('sticker')) {
+                matches = findProducts("sticker");
+            } else if (lowerMsg.includes('polaroid')) {
+                matches = findProducts("polaroid");
+            } else if (lowerMsg.includes('bookmark')) {
+                matches = findProducts("bookmark");
             }
+
+            if (matches.length > 0) {
+                response = "Here are the available options:\n\n" +
+                    matches.map(p => `- ${p.title}: ${p.price}`).join("\n");
+            } else {
+                // fallback random product
+                const randomProduct = priceListData[Math.floor(Math.random() * priceListData.length)];
+                response = `Our ${randomProduct.item} in ${randomProduct.category} costs ${randomProduct.price}.`;
+            }
+
+            // Services
         } else if (lowerMsg.includes('service') || lowerMsg.includes('what do you') || lowerMsg.includes('offer')) {
-            response = "We offer photo paper stickers, bookmarks, photocards, mini lomo cards, polaroid cards, and mini calendars. All available in different finishes like matte, silky, and high-gloss. What interests you most?";
+            response = "We offer: " + servicesData.map(s => s.title).join(", ") + ". Which one are you interested in?";
+
+            // Finish types
         } else if (lowerMsg.includes('finish') || lowerMsg.includes('type')) {
             response = "We offer three main finishes: Matte (classic look), Silky (premium feel), and High-Gloss (vibrant colors). Each has its own unique appeal!";
+
+            // Sizes
         } else if (lowerMsg.includes('size') || lowerMsg.includes('dimension')) {
-            response = "We have various sizes: A4 for larger prints, 10×15cm for standard photos, and 8.5×5.5cm for mini cards. What size works best for your project?";
+            response = "Sizes available: A4 (large prints), 10×15 cm (standard photo), 8.5×5.5 cm (mini cards), plus packs and calendars.";
+
+            // Delivery
         } else if (lowerMsg.includes('delivery') || lowerMsg.includes('time') || lowerMsg.includes('when')) {
             response = "Standard delivery is 3-5 business days. Rush orders available for urgent needs. We'll keep you updated throughout the process!";
+
+            // Bulk orders
         } else if (lowerMsg.includes('bulk') || lowerMsg.includes('pack') || lowerMsg.includes('quantity')) {
             response = "We offer great bulk pricing! Mini Lomo packs (20 cards) and Photo card packs (8 cards) provide excellent value. Contact us for custom bulk orders!";
+
+            // Greetings
         } else if (lowerMsg.includes('hello') || lowerMsg.includes('hi') || lowerMsg.includes('hey')) {
             response = "Hello! Welcome to Cholee Printing and Crafting. I'm here to help you find the perfect printing solution. What can I assist you with today?";
+
+            // Thanks
         } else if (lowerMsg.includes('thank')) {
             response = "You're very welcome! Is there anything else I can help you with regarding our products or services?";
+
+            // Contact / Location
         } else if (lowerMsg.includes('contact') || lowerMsg.includes('location') || lowerMsg.includes('address')) {
-            response = "You can reach us at (555) 123-4567 or info@choleeprinting.com. We're open Monday-Friday 9am-6pm, Saturday 10am-4pm. Check our contact section for more details!";
+            response = "You can reach us at (+94) 77 837 55 05 or cholee.lk@gmail.com. We're open Monday-Friday 9am-10pm, Saturday 10am-5pm. Check our contact section for more details!";
+
+            // Recommendations
         } else if (lowerMsg.includes('recommend') || lowerMsg.includes('suggest') || lowerMsg.includes('best')) {
-            response = "For beginners, I'd recommend our photocards in silky finish - they're popular and affordable. For gifts, mini calendars are perfect. What's the occasion?";
+            response = "For beginners, I'd recommend our Photocards in silky finish - they're popular and affordable. For gifts, mini calendars are perfect. What's the occasion?";
         }
-        
+
         addMessage(response, 'bot');
     }
 }
@@ -821,11 +861,11 @@ function setupEventListeners() {
     const goTopBtn = document.getElementById('go-top-btn');
     const menuToggle = document.getElementById('menu-toggle');
     const nav = document.getElementById('nav');
-    
+
     // Show more services button
     if (showMoreServicesBtn) {
         const moreServicesContainer = document.getElementById('more-services');
-        showMoreServicesBtn.addEventListener('click', function() {
+        showMoreServicesBtn.addEventListener('click', function () {
             if (moreServicesContainer.style.display === 'grid') {
                 moreServicesContainer.style.display = 'none';
                 this.textContent = 'Show More Services';
@@ -835,11 +875,11 @@ function setupEventListeners() {
             }
         });
     }
-    
+
     // Show more products button
     if (showMoreProductsBtn) {
         const moreProductsContainer = document.getElementById('more-products');
-        showMoreProductsBtn.addEventListener('click', function() {
+        showMoreProductsBtn.addEventListener('click', function () {
             if (moreProductsContainer.style.display === 'grid') {
                 moreProductsContainer.style.display = 'none';
                 this.textContent = 'Show More Products';
@@ -849,10 +889,10 @@ function setupEventListeners() {
             }
         });
     }
-    
+
     // Theme toggle button
     if (themeBtn) {
-        themeBtn.addEventListener('click', function() {
+        themeBtn.addEventListener('click', function () {
             document.body.classList.toggle('light-theme');
             const icon = this.querySelector('i');
             if (document.body.classList.contains('light-theme')) {
@@ -862,9 +902,9 @@ function setupEventListeners() {
             }
         });
     }
-    
+
     // Go to top button
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (goTopBtn) {
             if (window.pageYOffset > 300) {
                 goTopBtn.classList.add('visible');
@@ -873,26 +913,26 @@ function setupEventListeners() {
             }
         }
     });
-    
+
     if (goTopBtn) {
-        goTopBtn.addEventListener('click', function() {
+        goTopBtn.addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-    
+
     // Mobile menu toggle
     if (menuToggle && nav) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function () {
             this.classList.toggle('active');
             nav.classList.toggle('active');
         });
     }
-    
+
     // Testimonial navigation
     const testimonialNextBtn = document.getElementById('testimonial-next');
     const testimonialPrevBtn = document.getElementById('testimonial-prev');
     const testimonialsTrack = document.getElementById('testimonials-track');
-    
+
     if (testimonialNextBtn && testimonialsTrack) {
         testimonialNextBtn.addEventListener('click', () => {
             clearInterval(testimonialInterval);
@@ -904,7 +944,7 @@ function setupEventListeners() {
             }, 5000);
         });
     }
-    
+
     if (testimonialPrevBtn && testimonialsTrack) {
         testimonialPrevBtn.addEventListener('click', () => {
             clearInterval(testimonialInterval);
@@ -916,12 +956,12 @@ function setupEventListeners() {
             }, 5000);
         });
     }
-    
+
     // Company navigation
     const companyNextBtn = document.getElementById('company-next');
     const companyPrevBtn = document.getElementById('company-prev');
     const companiesTrack = document.getElementById('companies-track');
-    
+
     if (companyNextBtn && companiesTrack) {
         companyNextBtn.addEventListener('click', () => {
             clearInterval(companyInterval);
@@ -933,7 +973,7 @@ function setupEventListeners() {
             }, 4000);
         });
     }
-    
+
     if (companyPrevBtn && companiesTrack) {
         companyPrevBtn.addEventListener('click', () => {
             clearInterval(companyInterval);
@@ -945,19 +985,19 @@ function setupEventListeners() {
             }, 4000);
         });
     }
-    
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement && menuToggle && nav) {
                 // Close mobile menu if open
                 menuToggle.classList.remove('active');
                 nav.classList.remove('active');
-                
+
                 window.scrollTo({
                     top: targetElement.offsetTop - 70,
                     behavior: 'smooth'
@@ -965,8 +1005,8 @@ function setupEventListeners() {
             }
         });
     });
-    
-    
+
+
     // Setup chatbot
     setupChatbot();
 }
