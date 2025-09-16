@@ -204,27 +204,27 @@ const productsData = [
 // Data for testimonials
 const testimonialsData = [
     {
-        text: "The team at Cholee created amazing wedding invitations for us. They were attentive to our needs and delivered beyond our expectations. Highly recommended!",
-        author: "Sarah Johnson",
-        role: "Wedding Client",
+        text: "Loding...",
+        author: "Loding...",
+        role: "Loding...",
         initial: "S"
     },
     {
         text: "We've been using Cholee for all our business printing needs for years. Their quality is consistently excellent, and their customer service is outstanding.",
-        author: "Michael Thompson",
+        author: "Chanaka Wickramasinghe",
         role: "Business Owner",
         initial: "M"
     },
     {
         text: "I ordered personalized mugs as gifts for my team, and they were thrilled! The print quality was superb, and the mugs arrived quickly. Will definitely order again.",
-        author: "Jennifer Lee",
-        role: "Office Manager",
+        author: "Loding...",
+        role: "Loding...",
         initial: "J"
     },
     {
         text: "The custom banners they created for our store opening were perfect! They captured exactly what we wanted and drew a lot of attention.",
-        author: "Robert Chen",
-        role: "Retail Store Owner",
+        author: "Loding...",
+        role: "Business Owner",
         initial: "R"
     }
 ];
