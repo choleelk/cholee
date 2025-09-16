@@ -1090,7 +1090,7 @@ nav ul li a:hover::after {
 
 /* About Section */
 .about {
-    padding: 0 0 50px 100px;
+    padding: 0 0 50px 70px;
     background: rgba(26, 37, 48, 0.9);
 }
 
@@ -1100,7 +1100,7 @@ nav ul li a:hover::after {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 0fr;
     gap: 50px;
     align-items: center;
 }
@@ -2057,6 +2057,7 @@ footer::before {
     }
 
 }
+
 
 
 
