@@ -1100,7 +1100,7 @@ nav ul li a:hover::after {
 
 .about-content {
     display: grid;
-    grid-template-columns: 0fr;
+    grid-template-columns: 1fr;
     gap: 50px;
     align-items: center;
 }
@@ -2057,5 +2057,6 @@ footer::before {
     }
 
 }
+
 
 
