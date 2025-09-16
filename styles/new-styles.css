@@ -1,0 +1,239 @@
+/* IMPORTANT: Save this as a NEW CSS file (e.g., new-styles.css) and update your HTML link */
+
+/* Force override all button styles */
+.btn, 
+button.btn,
+a.btn,
+.show-more-btn,
+.filter-toggle-btn,
+.clear-filters-btn,
+.floating-btn,
+.go-top-btn {
+    /* Reset all existing styles */
+    all: unset !important;
+    /* Apply new base styles */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    border: none !important;
+    outline: none !important;
+}
+
+/* NORMAL STYLE BUTTONS - No animations, clean style */
+.btn {
+    background: linear-gradient(135deg, #2d3748, #4a5568) !important;
+    color: white !important;
+    padding: 16px 32px !important;
+    border-radius: 8px !important;
+    font-size: 16px !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 4px 12px rgba(45, 55, 72, 0.3) !important;
+    border: 2px solid transparent !important;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #4a5568, #2d3748) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(45, 55, 72, 0.4) !important;
+    border-color: #718096 !important;
+}
+
+.btn:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 8px rgba(45, 55, 72, 0.3) !important;
+}
+
+/* Universal wave effect for other buttons */
+.show-more-btn,
+.filter-toggle-btn,
+.clear-filters-btn,
+.whatsapp-btn,
+.facebook-btn,
+.instagram-btn,
+.chatbot-btn,
+.go-top-btn,
+.testimonial-nav button,
+.company-nav button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-radius: 25px !important;
+    font-size: 16px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4) !important;
+}
+
+.show-more-btn::before,
+.filter-toggle-btn::before,
+.clear-filters-btn::before,
+.whatsapp-btn::before,
+.facebook-btn::before,
+.instagram-btn::before,
+.chatbot-btn::before,
+.go-top-btn::before,
+.testimonial-nav button::before,
+.company-nav button::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+    transition: left 0.5s ease !important;
+    z-index: -1 !important;
+}
+
+.show-more-btn:hover,
+.filter-toggle-btn:hover,
+.clear-filters-btn:hover,
+.whatsapp-btn:hover,
+.facebook-btn:hover,
+.instagram-btn:hover,
+.chatbot-btn:hover,
+.go-top-btn:hover,
+.testimonial-nav button:hover,
+.company-nav button:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.6) !important;
+    letter-spacing: 2px !important;
+}
+
+.show-more-btn:hover::before,
+.filter-toggle-btn:hover::before,
+.clear-filters-btn:hover::before,
+.whatsapp-btn:hover::before,
+.facebook-btn:hover::before,
+.instagram-btn:hover::before,
+.chatbot-btn:hover::before,
+.go-top-btn:hover::before,
+.testimonial-nav button:hover::before,
+.company-nav button:hover::before {
+    left: 0 !important;
+}
+
+/* Show more buttons */
+.show-more-btn {
+    width: 100% !important;
+    padding: 18px !important;
+    margin-top: 30px !important;
+}
+
+/* Filter toggle button */
+.filter-toggle-btn {
+    padding: 16px 28px !important;
+    border-radius: 50px !important;
+}
+
+.filter-toggle-btn.active {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%) !important;
+    animation: pulse 2s infinite !important;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1) !important; }
+    50% { transform: scale(1.05) !important; }
+    100% { transform: scale(1) !important; }
+}
+
+/* Clear filters button */
+.clear-filters-btn {
+    padding: 14px 28px !important;
+    border-radius: 50px !important;
+}
+
+/* THEME BUTTON KEEPS ORIGINAL STYLE */
+.theme-btn {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    color: white !important;
+    font-size: 24px !important;
+    margin: 10px 0 !important;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c) !important;
+    background-size: 400% 400% !important;
+    animation: colorCycle 4s ease infinite !important;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+}
+
+@keyframes colorCycle {
+    0%, 100% { background-position: 0% 50% !important; }
+    25% { background-position: 100% 50% !important; }
+    50% { background-position: 100% 100% !important; }
+    75% { background-position: 50% 100% !important; }
+}
+
+.theme-btn:hover {
+    transform: scale(1.3) rotate(360deg) !important;
+    animation-duration: 1s !important;
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6) !important;
+}
+
+.theme-btn::before {
+    display: none !important;
+}
+
+/* Other floating buttons with wave effect */
+.whatsapp-btn,
+.facebook-btn,
+.instagram-btn,
+.chatbot-btn {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    color: white !important;
+    font-size: 24px !important;
+    margin: 10px 0 !important;
+}
+
+/* Go to top button */
+.go-top-btn {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    color: white !important;
+    font-size: 24px !important;
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    z-index: 999 !important;
+}
+
+/* Navigation buttons */
+.testimonial-nav button,
+.company-nav button {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    color: white !important;
+    border: none !important;
+    font-size: 18px !important;
+    cursor: pointer !important;
+    margin: 0 10px !important;
+}
+
+/* Force display properties */
+.btn, .filter-toggle-btn, .clear-filters-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+}
+
+.show-more-btn {
+    display: block !important;
+}
+
+.floating-btn, .go-top-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
