@@ -1107,7 +1107,7 @@ nav ul li a:hover::after {
 
 @media (min-width: 900px) {
     .about-content {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 0fr 1fr;
     }
 }
 
