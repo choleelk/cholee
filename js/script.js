@@ -36,9 +36,9 @@ const servicesData = [
 const productsData = [
     {
         title: "Photo paper - Sticker",
-        description: "A4 size photo sticker sheet.",
-        price: "LKR 250.00",
-        priceValue: 250,
+        description: "Sticker sheet. Size can customize",
+        price: "LKR 320.00",
+        priceValue: 320,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
         category: "stickers",
@@ -47,14 +47,14 @@ const productsData = [
     },
     {
         title: "Bookmarks",
-        description: "Silky [3.4 cm × 15.2 cm].",
+        description: "Silky [3.4 cm × 15.2 cm]. - Single side / Double side. Size can customize",
         price: "LKR 200.00",
         priceValue: 200,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
         category: "bookmarks",
         finish: "silky",
-        size: "small"
+        size: "Default"
     },
     {
         title: "Photocard (Matte)",
@@ -65,7 +65,7 @@ const productsData = [
         image: "./images/loading.gif",
         category: "photocards",
         finish: "matte",
-        size: "A4"
+        size: "Straight Cut"
     },
     {
         title: "Photocard (Silky)",
@@ -98,7 +98,7 @@ const productsData = [
         image: "./images/loading.gif",
         category: "lomo-cards",
         finish: "silky",
-        size: "min 10"
+        size: "Minimum Qty: 10"
     },
     {
         title: "Mini Lomo Card (Matte)",
@@ -109,7 +109,7 @@ const productsData = [
         image: "./images/loading.gif",
         category: "lomo-cards",
         finish: "matte",
-        size: "min 10"
+        size: "Minimum Qty: 10"
     },
     {
         title: "Polaroid Card (Silky)",
@@ -1009,4 +1009,5 @@ function setupEventListeners() {
 
     // Setup chatbot
     setupChatbot();
+
 }
