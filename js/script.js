@@ -2,32 +2,32 @@
 const servicesData = [
     {
         title: "Photo paper - Sticker",
-        description: "High-quality photo sticker printing on A4 size sheets.",
+        description: "High-quality photo sticker printing. - Straight Cut",
         image: "./images/services/images/photo-paper-sticker.jpg"
     },
     {
         title: "Bookmarks",
-        description: "Silky finish bookmarks [3.4 cm × 15.2 cm]. - Single or double-sided printing.",
+        description: "Silky finish bookmarks - Single or double-sided printing.",
         image: "./images/loading.gif"
     },
     {
         title: "Photocards",
-        description: "Available in matte, silky, and high-gloss finishes (A4 or 10 × 15 cm).",
+        description: "Available in matte, silky, and high-gloss finishes.",
         image: "./images/loading.gif"
     },
     {
         title: "Mini Lomo Cards",
-        description: "Silky or matte finish [8.5 × 5.5 cm].",
+        description: "Silky or matte finish.",
         image: "./images/loading.gif"
     },
     {
         title: "Polaroid Cards",
-        description: "Classic silky or matte [10 × 15 cm] finish.",
+        description: "Classic silky or matte finish. Starting Price: LKR 30.00",
         image: "./images/loading.gif"
     },
     {
         title: "Mini Calendar",
-        description: "12-card mini calendar in silky or high-gloss finish [10 × 15 cm].",
+        description: "12-card mini calendar in silky or high-gloss finish.",
         image: "./images/loading.gif"
     }
 ];
@@ -91,31 +91,31 @@ const productsData = [
     },
     {
         title: "Mini Lomo Card (Silky)",
-        description: "[8.5 × 5.5 cm].",
+        description: "[5.4 × 8.6 cm].[1 mm ±]",
+        price: "LKR 35.00",
+        priceValue: 35,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "lomo-cards",
+        finish: "silky",
+        size: "min 10"
+    },
+    {
+        title: "Mini Lomo Card (Matte)",
+        description: "[5.4 × 8.6 cm].[1 mm ±]",
         price: "LKR 30.00",
         priceValue: 30,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
         category: "lomo-cards",
-        finish: "silky",
-        size: "small"
-    },
-    {
-        title: "Mini Lomo Card (Matte)",
-        description: "[8.5 × 5.5 cm].",
-        price: "LKR 25.00",
-        priceValue: 25,
-        orderNowBtnText: "Order Now",
-        image: "./images/loading.gif",
-        category: "lomo-cards",
         finish: "matte",
-        size: "small"
+        size: "min 10"
     },
     {
         title: "Polaroid Card (Silky)",
-        description: "[10 × 15 cm].",
-        price: "LKR 100.00",
-        priceValue: 100,
+        description: "[4.6 × 5.4 cm].",
+        price: "LKR 35.00",
+        priceValue: 35,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
         category: "polaroid-cards",
@@ -124,9 +124,9 @@ const productsData = [
     },
     {
         title: "Polaroid Card (Matte)",
-        description: "[10 × 15 cm].",
-        price: "LKR 80.00",
-        priceValue: 80,
+        description: "[4.6 × 5.4 cm].",
+        price: "LKR 30.00",
+        priceValue: 30,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
         category: "polaroid-cards",
@@ -134,26 +134,26 @@ const productsData = [
         size: "medium"
     },
     {
-        title: "Mini Lomo Pack - 20 Cards (Silky)",
-        description: "[8.5 × 5.5 cm].",
-        price: "LKR 550.00",
-        priceValue: 550,
+        title: "Mini Lomo Pack - 20 Cards (Matte)",
+        description: "[5.4 × 8.6 cm].[1 mm ±]",
+        price: "LKR 700.00",
+        priceValue: 700,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
         category: "packs",
-        finish: "silky",
-        size: "pack"
+        finish: "Matte",
+        size: "pack - Normal Box"
     },
     {
-        title: "Mini Lomo Pack - 20 Cards (High Gloss)",
-        description: "[8.5 × 5.5 cm].",
-        price: "LKR 500.00",
-        priceValue: 500,
+        title: "Mini Lomo Pack - 20 Cards (Matte)",
+        description: "[5.4 × 8.6 cm].[1 mm ±]",
+        price: "LKR 850.00",
+        priceValue: 850,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
         category: "packs",
-        finish: "high-gloss",
-        size: "pack"
+        finish: "Matte",
+        size: "pack - Printerd Box"
     },
     {
         title: "Photo Card Pack - 8 Cards (Silky)",
@@ -272,12 +272,12 @@ const priceListData = [
     { category: "Photocard", item: "matte [A4 - size]", price: "LKR 300.00" },
     { category: "Photocard", item: "silky [10 cm × 15 cm]", price: "LKR 100.00" },
     { category: "Photocard", item: "high-gloss [10 cm × 15 cm]", price: "LKR 80.00" },
-    { category: "Mini lomo card", item: "silky [8.5 cm × 5.5 cm]", price: "LKR 30.00" },
-    { category: "Mini lomo card", item: "mattte [8.5 cm × 5.5 cm]", price: "LKR 25.00" },
-    { category: "Polaroid card", item: "silky [10 cm × 15 cm]", price: "LKR 100.00" },
-    { category: "Polaroid card", item: "mattte [10 cm × 15 cm]", price: "LKR 80.00" },
-    { category: "Mini lomo pack - 20 cards", item: "silky [8.5cm × 5.5cm]", price: "LKR 550.00" },
-    { category: "Mini lomo pack - 20 cards", item: "high gloss [8.5cm × 5.5cm]", price: "LKR 500.00" },
+    { category: "Mini lomo card", item: "silky [5.4 × 8.6 cm].[1 mm ±]", price: "LKR 35.00" },
+    { category: "Mini lomo card", item: "mattte [5.4 × 8.6 cm].[1 mm ±]", price: "LKR 30.00" },
+    { category: "Polaroid card", item: "silky [4.6 × 5.4 cm].", price: "LKR 35.00" },
+    { category: "Polaroid card", item: "mattte [4.6 × 5.4 cm].", price: "LKR 30.00" },
+    { category: "Mini lomo pack - 20 cards - Normal Box", item: "matte [5.4 × 8.6 cm].[1 mm ±]", price: "LKR 700.00" },
+    { category: "Mini lomo pack - 20 cards - Printed Box", item: "matte [5.4 × 8.6 cm].[1 mm ±]", price: "LKR 850.00" },
     { category: "Photo card pack - 8 cards", item: "silky [10cm × 15cm]", price: "LKR 750.00" },
     { category: "Photo card pack - 8 cards", item: "high gloss [10cm × 15cm]", price: "LKR 600.00" },
     { category: "12 cards mini calendar", item: "silky [10cm × 15cm]", price: "LKR 1200.00" },
@@ -822,7 +822,7 @@ function setupChatbot() {
 
             // Sizes
         } else if (lowerMsg.includes('size') || lowerMsg.includes('dimension')) {
-            response = "Sizes available: A4 (large prints), 10×15 cm (standard photo), 8.5×5.5 cm (mini cards), plus packs and calendars.";
+            response = "Sizes available: A4 (large prints), 10×15 cm (standard photo), 4.6×5.4 cm (mini cards), plus packs and calendars.";
 
             // Delivery
         } else if (lowerMsg.includes('delivery') || lowerMsg.includes('time') || lowerMsg.includes('when')) {
