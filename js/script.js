@@ -204,10 +204,10 @@ const productsData = [
 // Data for testimonials
 const testimonialsData = [
     {
-        text: "Loding...",
-        author: "Loding...",
-        role: "Loding...",
-        initial: "S"
+        text: "Just wanted to say I really loved the photo card prints! Great quality, fast service, and exactly how I wanted. Thank you so much — will definitely order again! 💖✨",
+        author: "Piyumi Dilshika",
+        role: "",
+        initial: "PD"
     },
     {
         text: "We've been using Cholee for all our business printing needs for years. Their quality is consistently excellent, and their customer service is outstanding.",
@@ -1011,3 +1011,4 @@ function setupEventListeners() {
     setupChatbot();
 
 }
+
