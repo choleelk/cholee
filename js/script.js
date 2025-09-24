@@ -208,24 +208,6 @@ const testimonialsData = [
         author: "Piyumi Dilshika",
         role: "",
         initial: "PD"
-    },
-    {
-        text: "We've been using Cholee for all our business printing needs for years. Their quality is consistently excellent, and their customer service is outstanding.",
-        author: "Chanaka Wickramasinghe",
-        role: "Business Owner",
-        initial: "M"
-    },
-    {
-        text: "I ordered personalized mugs as gifts for my team, and they were thrilled! The print quality was superb, and the mugs arrived quickly. Will definitely order again.",
-        author: "Loding...",
-        role: "Loding...",
-        initial: "J"
-    },
-    {
-        text: "The custom banners they created for our store opening were perfect! They captured exactly what we wanted and drew a lot of attention.",
-        author: "Loding...",
-        role: "Business Owner",
-        initial: "R"
     }
 ];
 
@@ -233,34 +215,6 @@ const testimonialsData = [
 const companiesData = [
     {
         name: "TechSolutions Inc.",
-        image: "./images/loading.gif"
-    },
-    {
-        name: "Creative Minds Agency",
-        image: "./images/loading.gif"
-    },
-    {
-        name: "City Events Planning",
-        image: "./images/loading.gif"
-    },
-    {
-        name: "Quality Retail Group",
-        image: "./images/loading.gif"
-    },
-    {
-        name: "Prime Hospitality",
-        image: "./images/loading.gif"
-    },
-    {
-        name: "Innovate Tech",
-        image: "./images/loading.gif"
-    },
-    {
-        name: "Global Marketing Pros",
-        image: "./images/loading.gif"
-    },
-    {
-        name: "Elite Business Solutions",
         image: "./images/loading.gif"
     }
 ];
@@ -1011,4 +965,5 @@ function setupEventListeners() {
     setupChatbot();
 
 }
+
 
