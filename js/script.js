@@ -7,7 +7,7 @@ const servicesData = [
     },
     {
         title: "Bookmarks",
-        description: "Silky finish bookmarks - Single or double-sided printing.",
+        description: "Matte finish bookmarks - Single or double-sided printing.",
         image: "./images/loading.gif"
     },
     {
@@ -47,14 +47,47 @@ const productsData = [
     },
     {
         title: "Bookmarks",
-        description: "Silky [3.4 cm × 15.2 cm]. - Single side / Double side. Size can customize",
+        description: "Matte Finish [5 cm × 15 cm]",
         price: "LKR 200.00",
         priceValue: 200,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
         category: "bookmarks",
-        finish: "silky",
+        finish: "Matte",
         size: "Default"
+    },
+    {
+        title: "Calendar - 13Cards - Glossy Finish",
+        description: "13 cards of calendar with glossy finish. [10 cm × 15 cm]",
+        price: "LKR 1000.00",
+        priceValue: 1000,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "calendars",
+        finish: "glossy",
+        size: "[10 cm × 15 cm]"
+    },
+    {
+        title: "Calendar - 13Cards - Matte Finish",
+        description: "13 cards of calendar with matte finish. [10 cm × 15 cm]",
+        price: "LKR 1300.00",
+        priceValue: 1300,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "calendars",
+        finish: "matte",
+        size: "[10 cm × 15 cm]"
+    },
+    {
+        title: "Calendar - 13Cards - Silky Finish",
+        description: "13 cards of calendar with silky finish. [10 cm × 15 cm]",
+        price: "LKR 1600.00",
+        priceValue: 1600,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "calendars",
+        finish: "silky",
+        size: "[10 cm × 15 cm]"
     },
     {
         title: "Photocard (Matte)",
@@ -90,10 +123,10 @@ const productsData = [
         size: "medium"
     },
     {
-        title: "Mini Lomo Card (Silky)",
+        title: "Mini Lomo Card (Glossy)",
         description: "[5.4 × 8.6 cm].[1 mm ±]",
-        price: "LKR 35.00",
-        priceValue: 35,
+        price: "LKR 30.00",
+        priceValue: 30,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
         category: "lomo-cards",
@@ -103,35 +136,194 @@ const productsData = [
     {
         title: "Mini Lomo Card (Matte)",
         description: "[5.4 × 8.6 cm].[1 mm ±]",
-        price: "LKR 30.00",
-        priceValue: 30,
+        price: "LKR 35.00",
+        priceValue: 35,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "lomo-cards",
+        finish: "silky",
+        size: "Minimum Qty: 10"
+    },
+    {
+        title: "Mini Lomo Card (Silky)",
+        description: "[5.4 × 8.6 cm].[1 mm ±]",
+        price: "LKR 40.00",
+        priceValue: 40,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
         category: "lomo-cards",
         finish: "matte",
         size: "Minimum Qty: 10"
     },
+    // Glossy Finish
     {
-        title: "Polaroid Card (Silky)",
-        description: "[4.6 × 5.4 cm].",
-        price: "LKR 35.00",
-        priceValue: 35,
+        title: "Polaroid Go (Glossy)",
+        description: "[5.39cm × 6.66cm]",
+        price: "LKR 25.00",
+        priceValue: 25,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
-        category: "polaroid-cards",
-        finish: "silky",
-        size: "medium"
+        category: "polaroid",
+        finish: "glossy",
+        size: "small"
     },
     {
-        title: "Polaroid Card (Matte)",
-        description: "[4.6 × 5.4 cm].",
+        title: "Instax Mini (Glossy)",
+        description: "[5.4cm × 8.6cm]",
         price: "LKR 30.00",
         priceValue: 30,
         orderNowBtnText: "Order Now",
         image: "./images/loading.gif",
-        category: "polaroid-cards",
+        category: "polaroid",
+        finish: "glossy",
+        size: "mini"
+    },
+    {
+        title: "Instax Square (Glossy)",
+        description: "[7.2cm × 8.6cm]",
+        price: "LKR 35.00",
+        priceValue: 35,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "glossy",
+        size: "square"
+    },
+    {
+        title: "Instax Wide (Glossy)",
+        description: "[10.8cm × 8.6cm]",
+        price: "LKR 70.00",
+        priceValue: 70,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "glossy",
+        size: "wide"
+    },
+    {
+        title: "Instax i-Type (Glossy)",
+        description: "[8.8cm × 10.7cm]",
+        price: "LKR 70.00",
+        priceValue: 70,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "glossy",
+        size: "i-type"
+    },
+
+    // Matte Finish
+    {
+        title: "Polaroid Go (Matte)",
+        description: "[5.39cm × 6.66cm]",
+        price: "LKR 30.00",
+        priceValue: 30,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
         finish: "matte",
-        size: "medium"
+        size: "small"
+    },
+    {
+        title: "Instax Mini (Matte)",
+        description: "[5.4cm × 8.6cm]",
+        price: "LKR 35.00",
+        priceValue: 35,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "matte",
+        size: "mini"
+    },
+    {
+        title: "Instax Square (Matte)",
+        description: "[7.2cm × 8.6cm]",
+        price: "LKR 40.00",
+        priceValue: 40,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "matte",
+        size: "square"
+    },
+    {
+        title: "Instax Wide (Matte)",
+        description: "[10.8cm × 8.6cm]",
+        price: "LKR 75.00",
+        priceValue: 75,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "matte",
+        size: "wide"
+    },
+    {
+        title: "Instax i-Type (Matte)",
+        description: "[8.8cm × 10.7cm]",
+        price: "LKR 75.00",
+        priceValue: 75,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "matte",
+        size: "i-type"
+    },
+
+    // Silky Finish
+    {
+        title: "Polaroid Go (Silky)",
+        description: "[5.39cm × 6.66cm]",
+        price: "LKR 35.00",
+        priceValue: 35,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "silky",
+        size: "small"
+    },
+    {
+        title: "Instax Mini (Silky)",
+        description: "[5.4cm × 8.6cm]",
+        price: "LKR 40.00",
+        priceValue: 40,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "silky",
+        size: "mini"
+    },
+    {
+        title: "Instax Square (Silky)",
+        description: "[7.2cm × 8.6cm]",
+        price: "LKR 50.00",
+        priceValue: 50,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "silky",
+        size: "square"
+    },
+    {
+        title: "Instax Wide (Silky)",
+        description: "[10.8cm × 8.6cm]",
+        price: "LKR 85.00",
+        priceValue: 85,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "silky",
+        size: "wide"
+    },
+    {
+        title: "Instax i-Type (Silky)",
+        description: "[8.8cm × 10.7cm]",
+        price: "LKR 85.00",
+        priceValue: 85,
+        orderNowBtnText: "Order Now",
+        image: "./images/loading.gif",
+        category: "polaroid",
+        finish: "silky",
+        size: "i-type"
     },
     {
         title: "Mini Lomo Pack - 20 Cards (Matte)",
@@ -221,13 +413,14 @@ const companiesData = [
 
 // Price list data
 const priceListData = [
-    { category: "Photo paper - Sticker", item: "A4 - size", price: "LKR 250.00" },
-    { category: "Bookmarks", item: "silky [3.4 cm × 15.2 cm]", price: "LKR 200.00" },
+    { category: "Photo paper - Sticker", item: "A4 - size", price: "LKR 320.00" },
+    { category: "Bookmarks", item: "matte [5cm × 15 cm]", price: "LKR 200.00" },
     { category: "Photocard", item: "matte [A4 - size]", price: "LKR 300.00" },
     { category: "Photocard", item: "silky [10 cm × 15 cm]", price: "LKR 100.00" },
     { category: "Photocard", item: "high-gloss [10 cm × 15 cm]", price: "LKR 80.00" },
-    { category: "Mini lomo card", item: "silky [5.4 × 8.6 cm].[1 mm ±]", price: "LKR 35.00" },
-    { category: "Mini lomo card", item: "mattte [5.4 × 8.6 cm].[1 mm ±]", price: "LKR 30.00" },
+    { category: "Mini lomo card", item: "glossy [5.4 × 8.6 cm].[1 mm ±]", price: "LKR 30.00" },
+    { category: "Mini lomo card", item: "mattte [5.4 × 8.6 cm].[1 mm ±]", price: "LKR 35.00" },
+    { category: "Mini lomo card", item: "silky [5.4 × 8.6 cm].[1 mm ±]", price: "LKR 40.00" },
     { category: "Polaroid card", item: "silky [4.6 × 5.4 cm].", price: "LKR 35.00" },
     { category: "Polaroid card", item: "mattte [4.6 × 5.4 cm].", price: "LKR 30.00" },
     { category: "Mini lomo pack - 20 cards - Normal Box", item: "matte [5.4 × 8.6 cm].[1 mm ±]", price: "LKR 700.00" },
@@ -965,5 +1158,4 @@ function setupEventListeners() {
     setupChatbot();
 
 }
-
 
